@@ -29,6 +29,7 @@ app.use("/person", personRoutes);
 app.use("/menu", menuItemRoutes);
 
 // Start the server
+//commit added for testing purpose
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
