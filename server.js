@@ -2,9 +2,10 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const PORT = 3000;
+
 const db = require("./db");
 
+require("dotenv").config();
 // Use bodyParser to parse JSON in request bodies
 app.use(bodyParser.json());
 
@@ -29,7 +30,8 @@ app.use("/person", personRoutes);
 app.use("/menu", menuItemRoutes);
 
 // Start the server
-//commit added for testing purpose
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
